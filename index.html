@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>周末搭 · 大学生周末兼职撮合</title>
+  <style>
+    :root {
+      --ink: #1c1917;
+      --muted: #57534e;
+      --line: #e7e5e4;
+      --bg: #faf7f2;
+      --card: #fffdf9;
+      --accent: #c2410c;
+      --accent-soft: #ffedd5;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 8vw;
+      border-bottom: 1px solid var(--line);
+      background: rgba(250, 247, 242, 0.92);
+      position: sticky;
+      top: 0;
+    }
+    .logo { font-weight: 700; letter-spacing: 0.04em; }
+    nav { display: flex; gap: 20px; color: var(--muted); font-size: 14px; }
+    .hero { padding: 72px 8vw 40px; max-width: 920px; }
+    .tag {
+      display: inline-block;
+      background: var(--accent-soft);
+      color: var(--accent);
+      border-radius: 999px;
+      padding: 4px 12px;
+      font-size: 13px;
+      margin-bottom: 16px;
+    }
+    h1 { font-size: clamp(32px, 5vw, 52px); line-height: 1.15; margin: 0 0 16px; }
+    .lead { font-size: 18px; color: var(--muted); max-width: 640px; }
+    .actions { display: flex; gap: 12px; margin-top: 28px; flex-wrap: wrap; }
+    button, .btn {
+      border: 0;
+      border-radius: 999px;
+      padding: 12px 20px;
+      font-size: 15px;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    .primary { background: var(--ink); color: white; }
+    .ghost { background: transparent; border: 1px solid var(--line); }
+    section { padding: 28px 8vw 48px; }
+    h2 { font-size: 24px; margin: 0 0 8px; }
+    .sub { color: var(--muted); margin: 0 0 20px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 18px;
+    }
+    .pay { color: var(--accent); font-weight: 700; }
+    .meta { color: var(--muted); font-size: 14px; }
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; }
+    .step strong { display: block; margin-bottom: 4px; }
+    footer { padding: 24px 8vw 40px; color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); }
+    #toast {
+      display: none;
+      margin: 0 8vw 32px;
+      background: #ecfdf3;
+      border: 1px solid #bbf7d0;
+      color: #166534;
+      border-radius: 12px;
+      padding: 12px 16px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">周末搭</div>
+    <nav>
+      <a href="#jobs">找兼职</a>
+      <a href="#how">怎么撮合</a>
+      <a href="#roles">学生 / 商家</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero">
+      <div class="tag">大学生周末兼职撮合</div>
+      <h1>周末几小时，<br />对接附近真在招人的店。</h1>
+      <p class="lead">
+        学生按可出勤时间找短期岗位，商家按班次发布当天用工。信息集中在一处，减少来回打听和临时爽约。
+      </p>
+      <div class="actions">
+        <button class="primary" id="apply">我是学生，先看岗位</button>
+        <a class="btn ghost" href="#roles">我是商家，发一个班次</a>
+      </div>
+    </div>
+
+    <section id="jobs">
+      <h2>本周末附近班次</h2>
+      <p class="sub">示例数据，用来展示撮合列表。后续可换成真实岗位。</p>
+      <div class="grid">
+        <article class="card">
+          <div class="pay">28 元/小时</div>
+          <h3>咖啡店周末帮班</h3>
+          <p class="meta">周六 10:00–14:00 · 步行 12 分钟 · 校园东门</p>
+          <p>负责点单和出杯。无需经验，到店简单带教。</p>
+        </article>
+        <article class="card">
+          <div class="pay">35 元/小时</div>
+          <h3>市集活动引导</h3>
+          <p class="meta">周日 13:00–18:00 · 地铁 2 站 · 文化广场</p>
+          <p>维持入场秩序、回答路线。要求沟通清楚、守时。</p>
+        </article>
+        <article class="card">
+          <div class="pay">30 元/小时</div>
+          <h3>书店整理与收银协助</h3>
+          <p class="meta">周六 14:00–18:00 · 骑行 8 分钟 · 大学路</p>
+          <p>上架、打包。适合想要室内、节奏稳定的同学。</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="how">
+      <h2>怎么撮合</h2>
+      <p class="sub">先把三件事对齐：时间、距离、是否可靠。</p>
+      <div class="steps">
+        <div class="card step"><strong>1. 学生填可出勤</strong>只标周末能去的时段和能接受的距离。</div>
+        <div class="card step"><strong>2. 商家发一个班次</strong>写清岗位、时薪、人数和到店要求。</div>
+        <div class="card step"><strong>3. 双方确认</strong>匹配后互相确认，减少放鸽子。</div>
+      </div>
+    </section>
+
+    <section id="roles">
+      <h2>两边各自要解决的事</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>学生</h3>
+          <p>岗位散落在群聊和朋友圈，不知道哪家靠谱、通勤是否划算、干完能不能按时拿到钱。</p>
+        </article>
+        <article class="card">
+          <h3>商家</h3>
+          <p>周末临时缺人，招来的同学不稳定，培训成本压在很短的班次上。</p>
+        </article>
+      </div>
+    </section>
+
+    <div id="toast">已记下你的意向。这是演示页，后续会接上真实报名。</div>
+  </main>
+
+  <footer>周末搭 · 大学生周末兼职撮合演示页</footer>
+
+  <script>
+    document.getElementById("apply").addEventListener("click", function () {
+      document.getElementById("jobs").scrollIntoView({ behavior: "smooth" });
+      var toast = document.getElementById("toast");
+      toast.style.display = "block";
+    });
+  </script>
+</body>
+</html>
